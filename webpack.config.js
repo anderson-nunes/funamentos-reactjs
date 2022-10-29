@@ -9,7 +9,7 @@ module.exports = {
   devtool: isDevelopment ? "eval-source-map" : "source-map",
   entry: path.resolve(__dirname, "src", "index.jsx"),
   output: {
-    path: path.resolve(__dirname, " dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
   resolve: {
@@ -31,8 +31,8 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         use: {
-          loader: "Babel-loader",
-          option: {
+          loader: "babel-loader",
+          options: {
             plugins: [
               isDevelopment && require.resolve("react-refresh/babel"),
             ].filter(Boolean),
